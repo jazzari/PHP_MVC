@@ -1,21 +1,22 @@
 <?php
 namespace app\controllers;
 use app\core\Application;
+use app\core\Controller;
 
-class SiteController{
+class SiteController extends Controller{
 
-    public static function home(){
+    public  function home(){
         $params = [
             'name' => "The PHPMVC"
         ];
-        return Application::$app->router->renderView('home', $params);
+        return $this->render('home', $params);
     }
 
-    public static function contact(){
-        return Application::$app->router->renderView('contact');
+    public  function contact(){
+        return $this->render('contact');
     }
 
-    public static function handleContact(){
+    public  function handleContact(){
         return 'Handling submitted data';
     }
 }
