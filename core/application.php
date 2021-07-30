@@ -6,6 +6,7 @@ class Application{
     public Router $router;
     public Request $request;
     public static Application $app;
+    public Controller $controller;
 
     public function __construct($rootPath){
         self::$ROOT_DIR = $rootPath;
@@ -16,6 +17,14 @@ class Application{
 
     public function run(){
         echo $this->router->resolve();
+    }
+
+    public function getController(): app\core\Controller{
+        return $this->controller;
+    }
+
+    public function setController(app\core\Controller $controller): void {
+        $this->controller = $controller;
     }
 }
 ?>
