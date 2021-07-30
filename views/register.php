@@ -10,8 +10,8 @@
     </div>
   </div>
   <?php echo $form->field($model, 'email') ?>
-  <?php echo $form->field($model, 'password') ?>
-  <?php echo $form->field($model, 'confirmation') ?>
+  <?php echo $form->field($model, 'password')->passwordField() ?>
+  <?php echo $form->field($model, 'confirmation')->passwordField() ?>
 
   <button type="submit" class="btn btn-primary">Submit</button>
 <?php echo \app\core\form\Form::end(); ?>
